@@ -1,67 +1,54 @@
 import React from 'react'
 import "./dataTable.css"
-import { dataFake } from './Data'
+import { backgroundColor } from './Table';
+import { EditIcon, DeleteIcon } from './Icons';
 
-var miObjetoJSON = dataFake[0];
-let headerTable = [];
 
-for (var clave in dataFake[0]) {
-  if (miObjetoJSON.hasOwnProperty(clave)) {
-    headerTable.push(clave)
+// Componente Tabla
+
+function DataTable(props) {
+  {
+    Object.keys(props.data).map((i) => (
+      i % 2 === 0 ? backgroundColor.push('#fff') : backgroundColor.push('aliceblue')
+    ))
   }
-}
-function DataTable() {
+
   return (
     <div className='container-table' >
-
       <div className='dataTable'>
-        <h2>Table Responsive con CSS</h2>
+        <h2>{props.title}</h2>
         <div className='search'>
           <input placeholder='Search' />
-          <button><i class="bi bi-search"></i></button>
+          <button><i className="bi bi-search"></i></button>
         </div>
-        <table id="miTabla">
-
+        <table>
           <thead>
             <tr>
-              {Object.keys(headerTable).map((index) => (
-                <th scope="col" key={headerTable[index]}>{headerTable[index]}</th>
+              <th></th>
+              {Object.keys(props.tableHeader).map((index) => (
+                <th scope="col" key={props.tableHeader[index]}>{props.tableHeader[index]}</th>
               ))}
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
 
-            {Object.keys(dataFake).map((key) => (
+            {Object.keys(props.data).map((key) => (
+              <tr key={key} >
+                <td style={{ background: backgroundColor[key] }}><input type='checkbox'></input></td>
+                {Object.keys(props.tableHeader).map((index) => (
 
-              <tr key={dataFake[key].first_name}>
-                {/* {console.log(key)} */}
-                {Object.keys(headerTable).map((index) => (
-                  <td data-label={headerTable[index]} >
-                    {dataFake[key][headerTable[index]]}
+                  <td data-label={props.tableHeader[index]} key={index} style={{ background: backgroundColor[key] }}  >
+                    {props.data[key][props.tableHeader[index]]}
                   </td>
                 ))}
+                <td style={{ background: backgroundColor[key] }}><button className='delete'><EditIcon /></button></td>
+                <td style={{ background: backgroundColor[key] }}><button className='edit'><DeleteIcon /></button></td>
               </tr>
             ))}
           </tbody>
         </table>
-
-        <div id="paginacion"></div>
-
-        <div className='pagination'>
-          <div className='data-pagination'>
-            <p>Página 1 de 10</p>
-            <input type='number' placeholder='1' />
-          </div>
-          <div className='back'>
-            <button><i className="bi bi-chevron-double-left"></i></button>
-            <button><i className="bi bi-chevron-left"></i></button>
-          </div>
-
-          <div className='next'>
-            <button><i className="bi bi-chevron-right"></i></button>
-            <button><i className="bi bi-chevron-double-right"></i></button>
-          </div>
-        </div>
       </div>
     </div>
   )

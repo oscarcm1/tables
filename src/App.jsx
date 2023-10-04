@@ -1,10 +1,10 @@
-import DataTable from "./pages/DataTable"
+import Table from "./pages/Table"
 
 function App() {
 
   return (
     <>
-     <DataTable/>
+     <Table/>
     </>
   )
 }
