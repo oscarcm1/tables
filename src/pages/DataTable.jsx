@@ -2,6 +2,7 @@ import React from 'react'
 import "./dataTable.css"
 import { backgroundColor } from './Table';
 import { EditIcon, DeleteIcon } from './Icons';
+import { exportTableToExcel } from './download/Download';
 
 
 // Componente Tabla
@@ -18,29 +19,31 @@ function DataTable(props) {
       <div className='dataTable'>
 
         <h2>{props.title}</h2>
-
-
+        
         <div className='botones'>
 
           <div className='btn'>
             <i className="bi bi-person-plus-fill"></i>
             <button>Add</button>
           </div>
+
           <div className='btn'>
-           <i className="bi bi-cloud-arrow-down-fill"></i>
-            <button>Download</button>
-          </div> 
+            <i className="bi bi-cloud-arrow-down-fill"></i>
+            <button  onClick={() =>  exportTableToExcel('download')}>Download</button>
+          </div>
+
           <div className='btn'>
             <i className="bi bi-filter"></i>
             <button>Filter</button>
           </div>
+
           <div className='search'>
             <input placeholder='Search' />
           </div>
-          
 
         </div>
-        <table>
+
+        <table id='download'>
           <thead>
             <tr>
               <th></th>
@@ -62,8 +65,8 @@ function DataTable(props) {
                     {props.data[key][props.tableHeader[index]]}
                   </td>
                 ))}
-                <td  className="actions" style={{ background: backgroundColor[key] }}><button className='delete'><EditIcon /></button></td>
-                <td  className= "actions"style={{ background: backgroundColor[key] }}><button className='edit'><DeleteIcon /></button></td>
+                <td className="actions" style={{ background: backgroundColor[key] }}><button className='delete'><EditIcon   /></button></td>
+                <td className="actions" style={{ background: backgroundColor[key] }}><button className='edit'  ><DeleteIcon /></button></td>
               </tr>
             ))}
           </tbody>

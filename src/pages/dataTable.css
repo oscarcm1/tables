@@ -8,8 +8,9 @@
 .dashboard{
   position: relative;
   background-color: #2079ac00;
-  width: 80%;
-  margin-left: 20%;
+  width: calc(100% - 200px);
+  height: auto;
+  margin-left: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,24 +30,21 @@
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
+
 }
-.container-table {
-  background-color: rgb(178, 191, 193);
+
+.container-table{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  flex-wrap: wrap;
 }
 
 .dataTable {
-  width: 100%;
+  position: relative;
+  width: calc(100% - 40px);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 10px 40px;
+  padding: 20px;
 }
 .dataTable h2 {
   padding: 20px;
