@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import DataTable from "./DataTable";
 import { dataFake, dataFake2 } from "./Data";
 import { NextIcon, BeforeIcon } from "./Icons";
+import Menu from "./menu/Menu";
 export let backgroundColor = [];
 
 //Pasar la Data en formato JSON
@@ -85,6 +86,10 @@ function Table() {
     return (
         <div className="">
 
+            <Menu/>
+
+            <div className="dashboard">
+
             <DataTable
                 title={"Table Responsive con CSS"}
                 data={data}
@@ -100,7 +105,7 @@ function Table() {
                         <span>Filas por Página</span>
                         <select name="select" id="rows" onChange={ShowSelected}>
                             {Object.keys(rowPage).map((index) => (
-                                <option value={"" + rowPage[index]}>{rowPage[index]}</option>
+                                <option key={index} value={"" + rowPage[index]}>{rowPage[index]}</option>
                             ))}
 
                         </select>
@@ -119,6 +124,7 @@ function Table() {
                     <span>Total de Datos</span><p>{sizeData}</p>
                 </div>
             </div>
+         </div>
         </div>
     );
 }

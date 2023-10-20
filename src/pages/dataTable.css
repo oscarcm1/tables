@@ -1,16 +1,42 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
 #root {
-  --color-principal: #2078ac;
+  --color-principal: #000000;
   --color-text: rgba(0, 0, 0, 0.7);
 }
 
-.container-table {
+.dashboard{
   position: relative;
-  background-color: rgb(0, 0, 0);
+  background-color: #2079ac00;
+  width: 80%;
+  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.dashboard.active{
+  width: calc(100% - 60px);
+  margin-left: 60px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.container-table {
+  background-color: rgb(178, 191, 193);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   flex-wrap: wrap;
 }
 
@@ -36,6 +62,7 @@
   padding: 10px;
   border: 0px solid rgb(153, 153, 153);
   border-right: 1px solid rgba(255, 255, 255, 0.514);
+  font-weight: 900;
 }
 
 .dataTable td {
@@ -67,6 +94,7 @@ table {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  padding: 10px;
 }
 
 .search button {
@@ -90,7 +118,7 @@ table {
   border-bottom: 1px solid rgba(0, 0, 0, 0.151);
 }
 .pagination-button button {
-  background-color: white;
+  background-color: var(--color-principal);
   border: 1px solid rgba(0, 0, 0, 0.212);
   width: 40px;
   height: 40px;
@@ -227,19 +255,72 @@ button.delete:hover {
   -o-border-radius: 5px;
   cursor: pointer;
 }
+td.actions {
+  background-color: #2079ac00;
+  width: 20px;
+}
+
+td.actions input {
+  background-color: #2079ac00;
+  width: 15px;
+  height: 15px;
+}
 
 .bi.bi-trash {
-  color: rgb(201, 6, 6);
+  color: var(--color-principal);
 }
 
 .bi.bi-pencil-square {
-  color: green;
+  color: var(--color-principal);
 }
 .rows-page {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
 .rows-page select {
   border: 1px solid rgba(0, 0, 0, 0.247);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.botones {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-principal);
+  color: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btn button {
+  border: none;
+  padding: 10px 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+.bi {
+  color: white;
 }
