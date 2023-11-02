@@ -123,10 +123,10 @@ button.btn1:hover {
 
 @media (max-width: 960px) {
   .list span {
-    font-size: 0px;
+    font-size: 1rem;
   }
   .list.active span {
     display: block;
-    font-size: 1rem;
+    font-size: 0rem;
   }
 }
