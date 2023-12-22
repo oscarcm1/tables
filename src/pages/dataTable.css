@@ -3,10 +3,10 @@
 :root {
   --color-principal: #3c3388;
   --color-text: rgba(0, 0, 0, 0.7);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dashboard{
+.dashboard {
   position: relative;
   background-color: #2079ac00;
   width: calc(100% - 200px);
@@ -23,7 +23,7 @@
   -o-transition: 1s;
 }
 
-.dashboard.active{
+.dashboard.active {
   width: calc(100% - 60px);
   margin-left: 60px;
   transition: 1s;
@@ -31,10 +31,9 @@
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
-
 }
 
-.container-table{
+.container-table {
   width: 100%;
 }
 
@@ -323,3 +322,5 @@ td.actions input {
 .bi {
   color: white;
 }
+
+

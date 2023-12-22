@@ -54,7 +54,7 @@ function DataTable(props) {
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='xd'>
 
             {Object.keys(props.data).map((key) => (
               <tr key={key} >
